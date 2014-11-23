@@ -1,6 +1,7 @@
 {
 	"require": {
-		"joomla/application": "1.*"
+		"joomla/application": "1.*",
+		"filp/whoops": "1.*"
 	},
 
 	"autoload": {

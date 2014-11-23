@@ -13,6 +13,8 @@ use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
 
 class Application extends AbstractWebApplication
 {
@@ -49,12 +51,23 @@ class Application extends AbstractWebApplication
     protected function init()
     {
         $this->loadConfig();
+
+        define('AC_DEBUG', $this->get('system.debug'));
+
+        if (AC_DEBUG)
+        {
+            $whoops = new Run;
+            $whoops->pushHandler(new PrettyPageHandler);
+            $whoops->register();
+        }
     }
 
     /**
      * loadConfig
      *
      * @return  void
+     *
+     * @throws \Exception
      */
     protected function loadConfig()
     {
@@ -62,7 +75,7 @@ class Application extends AbstractWebApplication
 
         if (!is_file($configFile))
         {
-            echo 'config file not found, please copy etc/config.dist.json';
+            throw new \Exception('config file not found, please copy etc/config.dist.json');
         }
 
         $this->config->loadFile($configFile);
