@@ -10,7 +10,7 @@ namespace Achiever\Controller\Exercise;
 
 use Joomla\Controller\AbstractController;
 
-class DisplayController extends AbstractController
+class Create extends AbstractController
 {
 
     /**
@@ -26,7 +26,13 @@ class DisplayController extends AbstractController
      */
     public function execute()
     {
-        ECHO 'Let\'s do some exercise!';
+        echo '<h1>Exercise Create controller</h1>';
+
+        $input = $this->getInput();
+
+        echo sprintf('ID: %s', $input->getInt('id'));
+        echo '<br>';
+        echo sprintf('alias: %s', $input->get('alias'));
     }
 }
  

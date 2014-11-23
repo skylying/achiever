@@ -1,4 +1,4 @@
 {
-	"exercise": "Achiever\\Controller\\Exercise\\DisplayController",
-	"reading": "Achiever\\Controller\\Reading\\DisplayController"
+	"exercise/:id/:alias": "Exercise\\",
+	"reading/:catid/:slug": "Reading\\DisplayController"
 }

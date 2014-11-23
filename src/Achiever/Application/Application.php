@@ -84,7 +84,12 @@ class Application extends AbstractWebApplication
      */
     public function getController()
     {
+        /** @var \Joomla\Router\RestRouter $router */
         $router = $this->container->get('router');
+
+        // Set default controller
+        $router->setDefaultController('Exercise\\');
+        $router->setControllerPrefix('Achiever\\Controller\\');
 
         // Use pre-set uri.route in config
         $route = $this->config->get('uri.route');

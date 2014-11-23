@@ -12,10 +12,16 @@ namespace Achiever\Provider;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Registry\Registry;
+use Joomla\Router\RestRouter;
 use Joomla\Router\Router;
 
 class RouterProvider implements ServiceProviderInterface
 {
+    /**
+     * Property input.
+     *
+     * @var
+     */
     public $input;
 
     /**
@@ -33,8 +39,13 @@ class RouterProvider implements ServiceProviderInterface
         {
             $input = $container->get('app')->input;
 
-            $router = new Router($input);
-            
+            $router = new RestRouter($input);
+
+            /**
+             * http://localhost/framework_flower/public/olive/1/jack?_method=PUT
+             */
+            $router->setMethodInPostRequest(true);
+
             $map = new Registry;
             $map->loadFile(AC_ETC_PATH . '/routing.json');
 
