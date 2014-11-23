@@ -9,6 +9,7 @@
 namespace Achiever\Application;
 
 
+use Achiever\Jogging\Jogging;
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
 use Joomla\DI\Container;
@@ -50,9 +51,10 @@ class Application extends AbstractWebApplication
      */
     protected function doExecute()
     {
-        $config = $this->container->get('config');
+        /** @var \Achiever\Jogging\Jogging $jogging */
+        $jogging = $this->container->get('achiever.jogging');
 
-        echo $config->get('system.env');
+        echo $jogging->run();
     }
 
     /**
@@ -76,6 +78,7 @@ class Application extends AbstractWebApplication
         $this->container->share('app', $this);
         $this->container->share('config', $this->config);
         $this->container->share('whoops', $whoops);
+        $this->container->share('achiever.jogging', new Jogging);
     }
 
     /**
