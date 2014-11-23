@@ -9,11 +9,30 @@
 namespace Achiever\Jogging;
 
 
+use Joomla\Registry\Registry;
+
 class Jogging
 {
+    /**
+     * Property config.
+     *
+     * @var \Joomla\Registry\Registry
+     */
+    public $config;
+
+    /**
+     * @param Registry $config
+     */
+    public function __construct(Registry $config = null)
+    {
+        $this->config = $config ? : new Registry;
+    }
+
     public function run()
     {
-        return "I just kept running";
+
+        return 'I will run to ' . $this->config->get('where');
+
     }
 }
  

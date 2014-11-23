@@ -10,6 +10,10 @@ namespace Achiever\Application;
 
 
 use Achiever\Jogging\Jogging;
+use Achiever\Provider\ApplicationProvider;
+use Achiever\Provider\ConfigProvider;
+use Achiever\Provider\JoggingProvider;
+use Achiever\Provider\WhoopsProvider;
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
 use Joomla\DI\Container;
@@ -64,40 +68,13 @@ class Application extends AbstractWebApplication
      */
     protected function init()
     {
-        $this->loadConfig();
+        $this->container->registerServiceProvider(new ConfigProvider($this->config));
 
         define('AC_DEBUG', $this->get('system.debug'));
 
-        if (AC_DEBUG)
-        {
-            $whoops = new Run;
-            $whoops->pushHandler(new PrettyPageHandler);
-            $whoops->register();
-        }
-
-        $this->container->share('app', $this);
-        $this->container->share('config', $this->config);
-        $this->container->share('whoops', $whoops);
-        $this->container->share('achiever.jogging', new Jogging);
-    }
-
-    /**
-     * loadConfig
-     *
-     * @return  void
-     *
-     * @throws \Exception
-     */
-    protected function loadConfig()
-    {
-        $configFile = AC_ETC_PATH . '/config.json';
-
-        if (!is_file($configFile))
-        {
-            throw new \Exception('config file not found, please copy etc/config.dist.json');
-        }
-
-        $this->config->loadFile($configFile);
+        $this->container->registerServiceProvider(new ApplicationProvider($this));
+        $this->container->registerServiceProvider(new WhoopsProvider);
+        $this->container->registerServiceProvider(new JoggingProvider($this->config));
     }
 }
  
