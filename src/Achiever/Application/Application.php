@@ -10,9 +10,23 @@ namespace Achiever\Application;
 
 
 use Joomla\Application\AbstractWebApplication;
+use Joomla\Application\Web;
+use Joomla\Input\Input;
+use Joomla\Registry\Registry;
 
 class Application extends AbstractWebApplication
 {
+    /**
+     * @param Input         $input
+     * @param Registry      $config
+     * @param Web\WebClient $client
+     */
+    public function __construct(Input $input = null, Registry $config = null, Web\WebClient $client = null)
+    {
+        parent::__construct($input, $config, $client);
+
+        $this->init();
+    }
 
     /**
      * Method to run the application routines.  Most likely you will want to instantiate a controller
@@ -24,7 +38,34 @@ class Application extends AbstractWebApplication
      */
     protected function doExecute()
     {
-        echo 'This is first step of achiever!';
+        echo $this->get('system.env');
+    }
+
+    /**
+     * init
+     *
+     * @return  void
+     */
+    protected function init()
+    {
+        $this->loadConfig();
+    }
+
+    /**
+     * loadConfig
+     *
+     * @return  void
+     */
+    protected function loadConfig()
+    {
+        $configFile = AC_ETC_PATH . '/config.json';
+
+        if (!is_file($configFile))
+        {
+            echo 'config file not found, please copy etc/config.dist.json';
+        }
+
+        $this->config->loadFile($configFile);
     }
 }
  
