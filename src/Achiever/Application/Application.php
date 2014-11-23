@@ -8,19 +8,17 @@
 
 namespace Achiever\Application;
 
-
-use Achiever\Jogging\Jogging;
+use Achiever\Controller\Exercising\DisplayController;
 use Achiever\Provider\ApplicationProvider;
 use Achiever\Provider\ConfigProvider;
 use Achiever\Provider\JoggingProvider;
+use Achiever\Provider\RouterProvider;
 use Achiever\Provider\WhoopsProvider;
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
 use Joomla\DI\Container;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
-use Whoops\Handler\PrettyPageHandler;
-use Whoops\Run;
 
 class Application extends AbstractWebApplication
 {
@@ -55,10 +53,9 @@ class Application extends AbstractWebApplication
      */
     protected function doExecute()
     {
-        /** @var \Achiever\Jogging\Jogging $jogging */
-        $jogging = $this->container->get('achiever.jogging');
+        $controller = $this->getController();
 
-        echo $jogging->run();
+        $controller->execute();
     }
 
     /**
@@ -72,9 +69,19 @@ class Application extends AbstractWebApplication
 
         define('AC_DEBUG', $this->get('system.debug'));
 
-        $this->container->registerServiceProvider(new ApplicationProvider($this));
-        $this->container->registerServiceProvider(new WhoopsProvider);
-        $this->container->registerServiceProvider(new JoggingProvider($this->config));
+        $this->container
+            ->registerServiceProvider(new ApplicationProvider($this))
+            ->registerServiceProvider(new WhoopsProvider)
+            ->registerServiceProvider(new JoggingProvider($this->config))
+            ->registerServiceProvider(new RouterProvider($this));
+
+    }
+
+    public function getController()
+    {
+        $controller = new DisplayController($this->input, $this);
+
+        return $controller;
     }
 }
  

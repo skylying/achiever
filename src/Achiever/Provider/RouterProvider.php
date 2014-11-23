@@ -9,23 +9,13 @@
 namespace Achiever\Provider;
 
 
-use Joomla\Application\AbstractWebApplication;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
+use Joomla\Router\Router;
 
-class ApplicationProvider implements ServiceProviderInterface
+class RouterProvider implements ServiceProviderInterface
 {
-    /**
-     * Property app.
-     *
-     * @var
-     */
-    public $app;
-
-    public function __construct(AbstractWebApplication $app)
-    {
-        $this->app = $app;
-    }
+    public $input;
 
     /**
      * Registers the service provider with a DI container.
@@ -38,10 +28,14 @@ class ApplicationProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $container->share('app', $this->app);
+        $closure = function($container)
+        {
+            $input = $container->get('app')->input;
 
-        // todo:
-        //$container->share('input', $this->app->input);
+            return new Router($input);
+        };
+
+        $container->share('router', $closure);
     }
 }
  
