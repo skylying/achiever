@@ -11,6 +11,7 @@ namespace Achiever\Application;
 
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
+use Joomla\DI\Container;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 use Whoops\Handler\PrettyPageHandler;
@@ -19,12 +20,21 @@ use Whoops\Run;
 class Application extends AbstractWebApplication
 {
     /**
+     * Property container.
+     *
+     * @var  \Joomla\DI\Container
+     */
+    public $container;
+
+    /**
      * @param Input         $input
      * @param Registry      $config
      * @param Web\WebClient $client
      */
     public function __construct(Input $input = null, Registry $config = null, Web\WebClient $client = null)
     {
+        $this->container = new Container;
+
         parent::__construct($input, $config, $client);
 
         $this->init();
@@ -40,7 +50,9 @@ class Application extends AbstractWebApplication
      */
     protected function doExecute()
     {
-        echo $this->get('system.env');
+        $config = $this->container->get('config');
+
+        echo $config->get('system.env');
     }
 
     /**
@@ -60,6 +72,10 @@ class Application extends AbstractWebApplication
             $whoops->pushHandler(new PrettyPageHandler);
             $whoops->register();
         }
+
+        $this->container->share('app', $this);
+        $this->container->share('config', $this->config);
+        $this->container->share('whoops', $whoops);
     }
 
     /**
