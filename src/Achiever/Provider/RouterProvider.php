@@ -11,6 +11,7 @@ namespace Achiever\Provider;
 
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
+use Joomla\Registry\Registry;
 use Joomla\Router\Router;
 
 class RouterProvider implements ServiceProviderInterface
@@ -32,7 +33,14 @@ class RouterProvider implements ServiceProviderInterface
         {
             $input = $container->get('app')->input;
 
-            return new Router($input);
+            $router = new Router($input);
+            
+            $map = new Registry;
+            $map->loadFile(AC_ETC_PATH . '/routing.json');
+
+            $router->addMaps($map->toArray());
+
+            return $router;
         };
 
         $container->share('router', $closure);

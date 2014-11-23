@@ -8,7 +8,8 @@
 
 namespace Achiever\Application;
 
-use Achiever\Controller\Exercising\DisplayController;
+
+use Achiever\Controller\Exercise\DisplayController;
 use Achiever\Provider\ApplicationProvider;
 use Achiever\Provider\ConfigProvider;
 use Achiever\Provider\JoggingProvider;
@@ -74,14 +75,24 @@ class Application extends AbstractWebApplication
             ->registerServiceProvider(new WhoopsProvider)
             ->registerServiceProvider(new JoggingProvider($this->config))
             ->registerServiceProvider(new RouterProvider($this));
-
     }
 
+    /**
+     * getController
+     *
+     * @return  DisplayController
+     */
     public function getController()
     {
-        $controller = new DisplayController($this->input, $this);
+        $router = $this->container->get('router');
 
-        return $controller;
+        // Use pre-set uri.route in config
+        $route = $this->config->get('uri.route');
+
+        // Make sure no index.php/
+        $urlRoute = str_replace('index.php/', '', $route);
+
+        return $router->getController($urlRoute);
     }
 }
  

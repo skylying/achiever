@@ -6,8 +6,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Controller\Exercising;
-
+namespace Achiever\Controller\Exercise;
 
 use Joomla\Controller\AbstractController;
 
