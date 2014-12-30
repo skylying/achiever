@@ -1,3 +1,7 @@
+system:
+    debug: '1'
+    env: 'dev'
+
 database:
     driver: mysql
     host: 'localhost'

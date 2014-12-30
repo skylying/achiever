@@ -75,7 +75,7 @@ class Application extends AbstractWebApplication
             ->registerServiceProvider(new WhoopsProvider)
             ->registerServiceProvider(new JoggingProvider($this->config))
             ->registerServiceProvider(new RouterProvider($this))
-            ->registerServiceProvider(new DatabaseProvider($this));
+            ->registerServiceProvider(new DatabaseProvider($this->config));
     }
 
     /**

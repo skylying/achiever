@@ -43,14 +43,14 @@ class ConfigProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $configFile = AC_ETC_PATH . '/config.json';
+        $configFile = AC_ROOT_PATH . '/config/config.yml';
 
         if (!is_file($configFile))
         {
-            throw new \Exception('config file not found, please copy etc/config.dist.json');
+            throw new \Exception('config file not found, please copy config/config.dist.yml');
         }
 
-        $this->config->loadFile($configFile);
+        $this->config->loadFile($configFile, $format = 'YAML');
 
         $container->share('config', $this->config);
     }

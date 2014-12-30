@@ -8,7 +8,8 @@
 
 namespace Achiever\Provider;
 
-use Achiever\Helper\ConfigHelper;
+
+use Joomla\Registry\Registry;
 use Windwalker\Database\DatabaseFactory;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
@@ -17,6 +18,18 @@ use Windwalker\DataMapper\Adapter\WindwalkerAdapter;
 
 class DatabaseProvider implements ServiceProviderInterface
 {
+
+	/**
+	 * Property config.
+	 *
+	 * @var \Joomla\Registry\Registry
+	 */
+	public $config;
+
+	public function __construct(Registry $config)
+	{
+		$this->config = $config;
+	}
 
     /**
      * Registers the service provider with a DI container.
@@ -31,14 +44,14 @@ class DatabaseProvider implements ServiceProviderInterface
     {
         $closure = function($container)
         {
-			$dbConfig = ConfigHelper::loadConfig();
+			$dbConfig = $this->config->get('database');
 
             $options = array(
-                'driver'   => $dbConfig['database']['driver'],
-				'name'     => $dbConfig['database']['name'],
-                'host'     => $dbConfig['database']['host'],
-                'user'     => $dbConfig['database']['user'],
-                'password' => $dbConfig['database']['password'],
+                'driver'   => $dbConfig->driver,
+				'name'     => $dbConfig->name,
+                'host'     => $dbConfig->host,
+                'user'     => $dbConfig->user,
+                'password' => $dbConfig->password,
             );
 
             $db = DatabaseFactory::getDbo('mysql', $options);
@@ -47,7 +60,7 @@ class DatabaseProvider implements ServiceProviderInterface
 			DatabaseAdapter::setInstance(new WindwalkerAdapter($db));
 
 			// bug, 不知道修好沒
-			$db->select($dbConfig['database']['name']);
+			$db->select($dbConfig->name);
 
 			return $db;
         };
