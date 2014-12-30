@@ -3,6 +3,5 @@
 	"exercise/:id/:alias": "Exercise\\",
 
 	"reading": "Reading\\",
-
 	"reading/:id/:alias": "Reading\\"
 }
