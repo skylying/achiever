@@ -8,8 +8,10 @@
 
 namespace Achiever\Application;
 
+use Achiever\Helper\ContainerHelper;
 use Achiever\Provider\ApplicationProvider;
 use Achiever\Provider\ConfigProvider;
+use Achiever\Provider\DatabaseProvider;
 use Achiever\Provider\JoggingProvider;
 use Achiever\Provider\RouterProvider;
 use Achiever\Provider\WhoopsProvider;
@@ -35,7 +37,7 @@ class Application extends AbstractWebApplication
      */
     public function __construct(Input $input = null, Registry $config = null, Web\WebClient $client = null)
     {
-        $this->container = new Container;
+        $this->container = ContainerHelper::getContainer();
 
         parent::__construct($input, $config, $client);
 
@@ -72,7 +74,8 @@ class Application extends AbstractWebApplication
             ->registerServiceProvider(new ApplicationProvider($this))
             ->registerServiceProvider(new WhoopsProvider)
             ->registerServiceProvider(new JoggingProvider($this->config))
-            ->registerServiceProvider(new RouterProvider($this));
+            ->registerServiceProvider(new RouterProvider($this))
+            ->registerServiceProvider(new DatabaseProvider($this));
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd95e8a2a36ca1ad11742816787aabf1",
+    "hash": "3c323cb0eda6a55e8fa922545119ea0f",
     "packages": [
         {
             "name": "filp/whoops",
@@ -1153,13 +1153,252 @@
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
             "time": "2014-12-02 20:19:20"
+        },
+        {
+            "name": "windwalker/compare",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ventoviro/windwalker-compare.git",
+                "reference": "feaea38398036506a0d84738189dc3fcb7b82274"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-compare/zipball/feaea38398036506a0d84738189dc3fcb7b82274",
+                "reference": "feaea38398036506a0d84738189dc3fcb7b82274",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.10"
+            },
+            "require-dev": {
+                "windwalker/test": "~2.0"
+            },
+            "type": "windwalker-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Windwalker\\Compare\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.0+"
+            ],
+            "description": "Windwalker Compare package",
+            "homepage": "https://github.com/ventoviro/windwalker-compare",
+            "keywords": [
+                "compare",
+                "framework",
+                "windwalker"
+            ],
+            "time": "2014-12-16 15:28:13"
+        },
+        {
+            "name": "windwalker/data",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ventoviro/windwalker-data.git",
+                "reference": "c95d19159cbc082f992f3d5c720c7fe5379726ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-data/zipball/c95d19159cbc082f992f3d5c720c7fe5379726ca",
+                "reference": "c95d19159cbc082f992f3d5c720c7fe5379726ca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.10"
+            },
+            "require-dev": {
+                "windwalker/test": "~2.0"
+            },
+            "type": "windwalker-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Windwalker\\Data\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.0+"
+            ],
+            "description": "Windwalker Data package",
+            "homepage": "https://github.com/ventoviro/windwalker-data",
+            "keywords": [
+                "data",
+                "framework",
+                "windwalker"
+            ],
+            "time": "2014-12-26 15:47:16"
+        },
+        {
+            "name": "windwalker/database",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ventoviro/windwalker-database.git",
+                "reference": "d89b3e0e0772ed6f0baaf695e9266ff683f87fbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-database/zipball/d89b3e0e0772ed6f0baaf695e9266ff683f87fbb",
+                "reference": "d89b3e0e0772ed6f0baaf695e9266ff683f87fbb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.10",
+                "psr/log": "1.*@stable",
+                "windwalker/query": "~2.0"
+            },
+            "require-dev": {
+                "windwalker/compare": "~2.0",
+                "windwalker/test": "~2.0",
+                "windwalker/utilities": "~2.0"
+            },
+            "suggest": {
+                "windwalker/compare": "Install 2.* if you want to use Compare object."
+            },
+            "type": "windwalker-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Windwalker\\Database\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.0+"
+            ],
+            "description": "Windwalker Database package",
+            "homepage": "https://github.com/ventoviro/windwalker-database",
+            "keywords": [
+                "database",
+                "framework",
+                "windwalker"
+            ],
+            "time": "2014-12-17 12:14:31"
+        },
+        {
+            "name": "windwalker/datamapper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ventoviro/windwalker-datamapper.git",
+                "reference": "dbe82474f6c5269bbf86047b0b5799911d01a694"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-datamapper/zipball/dbe82474f6c5269bbf86047b0b5799911d01a694",
+                "reference": "dbe82474f6c5269bbf86047b0b5799911d01a694",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.10",
+                "windwalker/data": "~2.0"
+            },
+            "require-dev": {
+                "windwalker/compare": "~2.0",
+                "windwalker/database": "~2.0",
+                "windwalker/test": "~2.0"
+            },
+            "suggest": {
+                "windwalker/compare": "Install 2.* if you want to use Compare object.",
+                "windwalker/database": "Install 2.* if you want Windwalker Database."
+            },
+            "type": "windwalker-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Windwalker\\DataMapper\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.0+"
+            ],
+            "description": "Windwalker DataMapper package",
+            "homepage": "https://github.com/ventoviro/windwalker-datamapper",
+            "keywords": [
+                "datamapper",
+                "framework",
+                "windwalker"
+            ],
+            "time": "2014-12-26 15:46:52"
+        },
+        {
+            "name": "windwalker/query",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ventoviro/windwalker-query.git",
+                "reference": "c292b268aa352f9d66b82aca901b6cabe4dfc272"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ventoviro/windwalker-query/zipball/c292b268aa352f9d66b82aca901b6cabe4dfc272",
+                "reference": "c292b268aa352f9d66b82aca901b6cabe4dfc272",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.10"
+            },
+            "require-dev": {
+                "jdorn/sql-formatter": "1.*",
+                "windwalker/database": "~2.0",
+                "windwalker/test": "~2.0"
+            },
+            "type": "windwalker-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Windwalker\\Query\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.0+"
+            ],
+            "description": "Windwalker Query package",
+            "homepage": "https://github.com/ventoviro/windwalker-query",
+            "keywords": [
+                "framework",
+                "query",
+                "windwalker"
+            ],
+            "time": "2014-12-16 15:28:13"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "windwalker/datamapper": 20
+    },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }

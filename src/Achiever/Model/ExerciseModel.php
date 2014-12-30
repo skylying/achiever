@@ -9,10 +9,13 @@
 namespace Achiever\Model;
 
 
-use Joomla\Model\AbstractModel;
+use Achiever\Achiever\Model\ACModel;
 
-class ExerciseModel extends AbstractModel
+class ExerciseModel extends ACModel
 {
-    // tbd
+	public function getItem()
+	{
+		$db = $this->db;
+	}
 }
  
