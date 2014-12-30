@@ -6,7 +6,8 @@
 		"joomla/model": "1.*",
 		"joomla/view": "1.*",
 		"joomla/router": "1.*",
-		"filp/whoops": "1.*"
+		"filp/whoops": "1.*",
+		"robmorgan/phinx": "*"
 	},
 
 	"autoload": {
