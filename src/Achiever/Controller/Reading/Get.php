@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of achiever project. 
+ * Part of achiever project.
  *
  * @copyright  Copyright (C) 2011 - 2014 Achiever, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
@@ -8,10 +8,9 @@
 
 namespace Achiever\Controller\Reading;
 
-
 use Joomla\Controller\AbstractController;
 
-class DisplayController extends AbstractController
+class Get extends AbstractController
 {
 
     /**
@@ -27,7 +26,13 @@ class DisplayController extends AbstractController
      */
     public function execute()
     {
-        echo 'Time to read some book!';
+        echo '<h1>Reading GET controller</h1>';
+
+        $input = $this->getInput();
+
+        echo sprintf('ID: %s', $input->getInt('id'));
+        echo '<br>';
+        echo sprintf('alias: %s', $input->get('alias'));
     }
 }
  

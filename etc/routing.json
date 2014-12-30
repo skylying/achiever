@@ -1,4 +1,8 @@
 {
+	"exercise": "Exercise\\",
 	"exercise/:id/:alias": "Exercise\\",
-	"reading/:catid/:slug": "Reading\\DisplayController"
+
+	"reading": "Reading\\",
+
+	"reading/:id/:alias": "Reading\\"
 }

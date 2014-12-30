@@ -8,8 +8,6 @@
 
 namespace Achiever\Application;
 
-
-use Achiever\Controller\Exercise\DisplayController;
 use Achiever\Provider\ApplicationProvider;
 use Achiever\Provider\ConfigProvider;
 use Achiever\Provider\JoggingProvider;

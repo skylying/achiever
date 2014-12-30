@@ -7,6 +7,7 @@
  */
 
 include_once __DIR__ . '/vendor/autoload.php';
+include_once __DIR__ . '/php/methods.php';
 
 define('AC_ROOT_PATH', realpath(__DIR__));
 define('AC_ETC_PATH', realpath(__DIR__ . '/etc'));
