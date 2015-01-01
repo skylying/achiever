@@ -24,7 +24,7 @@ class HtmlView extends AbstractView
      */
     public function render()
     {
-        echo '<h1>Exercise GET View</h1>';
+        echo '<h1>Exercise View</h1>';
 
 		show($this->model);
 

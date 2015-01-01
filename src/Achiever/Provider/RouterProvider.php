@@ -39,12 +39,14 @@ class RouterProvider implements ServiceProviderInterface
         {
             $input = $container->get('app')->input;
 
-            $router = new RestRouter($input);
+            $router = new Router($input);
 
             /**
+			 * 目前還用不到 RestRouter, 先用正常的
+			 *
              * http://localhost/framework_flower/public/olive/1/jack?_method=PUT
              */
-            $router->setMethodInPostRequest(true);
+            //$router->setMethodInPostRequest(true);
 
             $map = new Registry;
             $map->loadFile(AC_ETC_PATH . '/routing.json');

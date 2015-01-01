@@ -17,7 +17,6 @@ use Achiever\Provider\RouterProvider;
 use Achiever\Provider\WhoopsProvider;
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
-use Joomla\DI\Container;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 

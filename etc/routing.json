@@ -1,5 +1,5 @@
 {
-	"exercise": "Exercise\\",
+	"exercise": "Exercise\\DisplayController",
 	"exercise/:id/:alias": "Exercise\\",
 
 	"reading": "Reading\\",
