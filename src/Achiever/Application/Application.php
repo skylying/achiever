@@ -8,7 +8,6 @@
 
 namespace Achiever\Application;
 
-use Achiever\Helper\ContainerHelper;
 use Achiever\Provider\ApplicationProvider;
 use Achiever\Provider\ConfigProvider;
 use Achiever\Provider\DatabaseProvider;
@@ -17,6 +16,7 @@ use Achiever\Provider\RouterProvider;
 use Achiever\Provider\WhoopsProvider;
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
+use Joomla\DI\Container;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 
@@ -36,7 +36,7 @@ class Application extends AbstractWebApplication
      */
     public function __construct(Input $input = null, Registry $config = null, Web\WebClient $client = null)
     {
-        $this->container = ContainerHelper::getContainer();
+        $this->container = new Container;
 
         parent::__construct($input, $config, $client);
 
@@ -53,9 +53,12 @@ class Application extends AbstractWebApplication
      */
     protected function doExecute()
     {
+		/** @var \Achiever\Achiever\Controller\ACController $controller */
         $controller = $this->getController();
 
-        $controller->execute();
+		$controller->setContainer($this->container)
+			->setApplication($this)
+			->execute();
     }
 
     /**
@@ -77,11 +80,11 @@ class Application extends AbstractWebApplication
             ->registerServiceProvider(new DatabaseProvider($this->config));
     }
 
-    /**
-     * getController
-     *
-     * @return  DisplayController
-     */
+	/**
+	 * getController
+	 *
+	 * @return  \Joomla\Controller\ControllerInterface
+	 */
     public function getController()
     {
         /** @var \Joomla\Router\RestRouter $router */

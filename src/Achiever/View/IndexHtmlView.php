@@ -20,7 +20,7 @@ class IndexHtmlView extends ACHtmlView
 	 */
 	public function render()
 	{
-		return  "<h1>Index view</h1>";
+		return parent::render();
 	}
 
 }

@@ -9,12 +9,13 @@
 namespace Achiever\Controller;
 
 
+use Achiever\Achiever\Controller\ACController;
 use Achiever\Achiever\Model\ACModel;
 use Achiever\Achiever\View\ACHtmlView;
-use Joomla\Controller\AbstractController;
+use Achiever\View\IndexHtmlView;
 use Windwalker\Data\Data;
 
-class IndexController extends AbstractController
+class IndexController extends ACController
 {
 
 	/**
@@ -30,11 +31,20 @@ class IndexController extends AbstractController
 	 */
 	public function execute()
 	{
-		$model = new ACModel;
+		/** @var \Achiever\Achiever\Model\ACModel $model */
+		//$model = new ACModel($this->container->get('db'));
 
-		$view = new ACHtmlView(new Data(['Name' => 'Jack']));
+		$testData = new Data(['name' => 'jack']);
 
-		$view->render();
+		$paths = new \SplPriorityQueue;
+
+		// Insert template roots and load priority (with number)
+		$paths->insert(AC_TEMPLATE_ROOT_PATH . '/_global', 128);
+
+		$view = new IndexHtmlView($testData, $paths);
+
+		// This is important, don't forget to echo the rendered output
+		echo $view->setLayout('default')->render();
 	}
 }
  

@@ -45,7 +45,7 @@ abstract class ACController extends AbstractController implements ContainerAware
 	 * @param AbstractWebApplication $app
 	 * @param Container              $container
 	 */
-	public function __construct(Input $input, AbstractWebApplication $app, Container $container)
+	public function __construct(Input $input = null, AbstractWebApplication $app = null, Container $container = null)
 	{
 		$this->container = $container ? : new Container;
 

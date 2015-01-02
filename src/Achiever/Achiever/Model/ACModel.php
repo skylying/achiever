@@ -30,7 +30,7 @@ class ACModel extends AbstractModel
 	/**
 	 * Constructor
 	 *
-	 * @param Registry $db
+	 * @param  $db
 	 * @param Registry $state
 	 */
 	public function __construct($db = null, Registry $state = null)
@@ -47,11 +47,6 @@ class ACModel extends AbstractModel
 	 */
 	public function getDb()
 	{
-		if (!$this->db)
-		{
-			$this->db = ContainerHelper::get('db');
-		}
-
 		return $this->db;
 	}
 
