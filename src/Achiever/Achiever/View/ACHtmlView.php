@@ -31,14 +31,13 @@ class ACHtmlView extends AbstractHtmlView
 	 * Constructor
 	 *
 	 * @param Data              $data
-	 * @param ModelInterface    $model
 	 * @param \SplPriorityQueue $paths
 	 */
-	public function __construct(Data $data, ModelInterface $model, \SplPriorityQueue $paths = null)
+	public function __construct(Data $data, \SplPriorityQueue $paths = null)
 	{
 		$this->data = ($data instanceof Data) ? $data : new Data($data);
 
-		parent::__construct($model, $paths);
+		$this->paths = isset($paths) ? $paths : $this->loadPaths();
 	}
 
 	/**

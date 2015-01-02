@@ -26,8 +26,6 @@ class HtmlView extends AbstractView
     {
         echo '<h1>Exercise View</h1>';
 
-		show($this->model);
-
         /*$input = $this->getInput();
 
         echo sprintf('ID: %s', $input->getInt('id'));

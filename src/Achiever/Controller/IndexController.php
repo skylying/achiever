@@ -9,7 +9,10 @@
 namespace Achiever\Controller;
 
 
+use Achiever\Achiever\Model\ACModel;
+use Achiever\Achiever\View\ACHtmlView;
 use Joomla\Controller\AbstractController;
+use Windwalker\Data\Data;
 
 class IndexController extends AbstractController
 {
@@ -27,7 +30,11 @@ class IndexController extends AbstractController
 	 */
 	public function execute()
 	{
-		echo '<h1>Index controller!</h1>';
+		$model = new ACModel;
+
+		$view = new ACHtmlView(new Data(['Name' => 'Jack']));
+
+		$view->render();
 	}
 }
  
