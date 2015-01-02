@@ -1,6 +1,8 @@
 {
-	"exercise": "Exercise\\DisplayController",
-	"exercise/:id/:alias": "Exercise\\",
+	"_comment": "Default controller is Achiever\\Controller\\IndexController",
+
+	"exercise": "Achiever\\Controller\\Exercise\\DisplayController",
+	"exercise/:id/:alias": "Achiever\\Controller\\Exercise\\DisplayController",
 
 	"reading": "Reading\\",
 	"reading/:id/:alias": "Reading\\"

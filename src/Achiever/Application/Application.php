@@ -88,8 +88,9 @@ class Application extends AbstractWebApplication
         $router = $this->container->get('router');
 
         // Set default controller
-        $router->setDefaultController('Exercise\\');
-        $router->setControllerPrefix('Achiever\\Controller\\');
+        $router->setDefaultController('Achiever\\Controller\\IndexController');
+		// Tim: 路徑全寫在 routing.json 比較清楚
+        //$router->setControllerPrefix('Achiever\\Controller\\');
 
         // Use pre-set uri.route in config
         $route = $this->config->get('uri.route');

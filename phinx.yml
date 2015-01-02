@@ -16,7 +16,7 @@ environments:
     development:
         adapter: mysql
         host: localhost
-        name: dev_achiever
+        name: achiever
         user: root
         pass: '1234'
         port: 3306

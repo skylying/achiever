@@ -8,7 +8,6 @@
 
 namespace Achiever\Controller\Exercise;
 
-use Achiever\Helper\ContainerHelper;
 use Achiever\Model\ExerciseModel;
 use Achiever\View\Exercise\HtmlView;
 use Joomla\Controller\AbstractController;
@@ -29,9 +28,7 @@ class DisplayController extends AbstractController
      */
     public function execute()
     {
-        //echo '<h1>Exercise GET controller</h1>';
-
-        $model = new ExerciseModel(ContainerHelper::get('db'));
+        $model = new ExerciseModel();
 
         $view = new HtmlView($model);
 

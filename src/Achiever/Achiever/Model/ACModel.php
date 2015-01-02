@@ -9,9 +9,15 @@
 namespace Achiever\Achiever\Model;
 
 
+use Achiever\Helper\ContainerHelper;
 use Joomla\Model\AbstractModel;
 use Joomla\Registry\Registry;
 
+/**
+ * Class ACModel
+ *
+ * @since 1.0
+ */
 class ACModel extends AbstractModel
 {
 	/**
@@ -27,9 +33,9 @@ class ACModel extends AbstractModel
 	 * @param Registry $db
 	 * @param Registry $state
 	 */
-	public function __construct($db, Registry $state = null)
+	public function __construct($db = null, Registry $state = null)
 	{
-		$this->db = $db;
+		$this->db = $db ? : $this->getDb();
 
 		parent::__construct($state);
 	}
@@ -41,6 +47,11 @@ class ACModel extends AbstractModel
 	 */
 	public function getDb()
 	{
+		if (!$this->db)
+		{
+			$this->db = ContainerHelper::get('db');
+		}
+
 		return $this->db;
 	}
 
