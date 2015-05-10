@@ -6,16 +6,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Controller;
+namespace BookBeacon\Controller;
 
 
-use Achiever\Achiever\Controller\ACController;
-use Achiever\Achiever\Model\ACModel;
-use Achiever\Achiever\View\ACHtmlView;
-use Achiever\View\IndexHtmlView;
+use BookBeacon\BookBeacon\Controller\BBController;
+use BookBeacon\View\IndexHtmlView;
 use Windwalker\Data\Data;
 
-class IndexController extends ACController
+class IndexController extends BBController
 {
 
 	/**
@@ -31,7 +29,7 @@ class IndexController extends ACController
 	 */
 	public function execute()
 	{
-		/** @var \Achiever\Achiever\Model\ACModel $model */
+		/** @var \BookBeacon\BookBeacon\Model\BBModel $model */
 		//$model = new ACModel($this->container->get('db'));
 
 		$testData = new Data(['name' => 'jack']);

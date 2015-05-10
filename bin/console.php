@@ -2,7 +2,7 @@
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
-class ACConsole extends \Joomla\Application\AbstractCliApplication
+class BBConsole extends \Joomla\Application\AbstractCliApplication
 {
 
     /**
@@ -32,6 +32,6 @@ class ACConsole extends \Joomla\Application\AbstractCliApplication
     }
 }
 
-$app = new ACConsole;
+$app = new BBConsole;
 
 $app->execute();

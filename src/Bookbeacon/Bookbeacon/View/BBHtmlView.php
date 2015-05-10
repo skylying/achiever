@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Achiever\View;
+namespace BookBeacon\BookBeacon\View;
 
 
 use Joomla\Model\ModelInterface;
@@ -18,7 +18,7 @@ use Windwalker\Data\Data;
  *
  * @since 1.0
  */
-class ACHtmlView extends AbstractHtmlView
+class BBHtmlView extends AbstractHtmlView
 {
 	/**
 	 * Property data.

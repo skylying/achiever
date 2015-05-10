@@ -6,19 +6,18 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Achiever\Model;
+namespace Bookbeacon\Bookbeacon\Model;
 
 
-use Achiever\Helper\ContainerHelper;
 use Joomla\Model\AbstractModel;
 use Joomla\Registry\Registry;
 
 /**
- * Class ACModel
+ * Class BBModel
  *
  * @since 1.0
  */
-class ACModel extends AbstractModel
+class BBModel extends AbstractModel
 {
 	/**
 	 * Property db.
@@ -55,7 +54,7 @@ class ACModel extends AbstractModel
 	 *
 	 * @param $db
 	 *
-	 * @return  ACModel
+	 * @return  BBModel
 	 */
 	public function setDb($db)
 	{

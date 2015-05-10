@@ -6,27 +6,16 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Provider;
+namespace BookBeacon\Provider;
 
 
-use Joomla\Application\AbstractWebApplication;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
 
-class ApplicationProvider implements ServiceProviderInterface
+class WhoopsProvider implements ServiceProviderInterface
 {
-    /**
-     * Property app.
-     *
-     * @var
-     */
-    public $app;
-
-    public function __construct(AbstractWebApplication $app)
-    {
-        $this->app = $app;
-    }
-
     /**
      * Registers the service provider with a DI container.
      *
@@ -38,10 +27,18 @@ class ApplicationProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $container->share('app', $this->app);
+        if (!AC_DEBUG)
+        {
+            return;
+        }
 
-        // todo:
-        //$container->share('input', $this->app->input);
+        $whoops = new Run;
+        $handler = new PrettyPageHandler;
+        $whoops->pushHandler($handler);
+        $whoops->register();
+
+        $container->share('whoops', $whoops);
+        $container->share('whoops.handler', $handler);
     }
 }
  

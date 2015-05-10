@@ -6,14 +6,15 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Provider;
+namespace BookBeacon\Provider;
 
 
+use Achiever\Jogging\Jogging;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Registry\Registry;
 
-class ConfigProvider implements ServiceProviderInterface
+class JoggingProvider implements ServiceProviderInterface
 {
     /**
      * Property config.
@@ -22,9 +23,7 @@ class ConfigProvider implements ServiceProviderInterface
      */
     public $config;
 
-    /**
-     * @param Registry $config
-     */
+
     public function __construct(Registry $config)
     {
         $this->config = $config;
@@ -38,21 +37,18 @@ class ConfigProvider implements ServiceProviderInterface
      * @return  void
      *
      * @since   1.0
-     *
-     * @throws \Exception
      */
     public function register(Container $container)
     {
-        $configFile = AC_ROOT_PATH . '/config/config.yml';
+        $this->config->set('where', 'Taiwan');
 
-        if (!is_file($configFile))
-        {
-            throw new \Exception('config file not found, please copy config/config.dist.yml');
-        }
-
-        $this->config->loadFile($configFile, $format = 'YAML');
-
-        $container->share('config', $this->config);
+        $container->share(
+            'achiever.jogging',
+            function ($container)
+            {
+                return new Jogging($container->get('config'));
+            }
+        );
     }
 }
  

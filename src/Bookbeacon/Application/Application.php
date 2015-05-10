@@ -6,14 +6,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Application;
+namespace BookBeacon\Application;
 
-use Achiever\Provider\ApplicationProvider;
-use Achiever\Provider\ConfigProvider;
-use Achiever\Provider\DatabaseProvider;
-use Achiever\Provider\JoggingProvider;
-use Achiever\Provider\RouterProvider;
-use Achiever\Provider\WhoopsProvider;
+use BookBeacon\Provider\ApplicationProvider;
+use BookBeacon\Provider\ConfigProvider;
+use BookBeacon\Provider\DatabaseProvider;
+use BookBeacon\Provider\JoggingProvider;
+use BookBeacon\Provider\RouterProvider;
+use BookBeacon\Provider\WhoopsProvider;
 use Joomla\Application\AbstractWebApplication;
 use Joomla\Application\Web;
 use Joomla\DI\Container;
@@ -53,7 +53,7 @@ class Application extends AbstractWebApplication
      */
     protected function doExecute()
     {
-		/** @var \Achiever\Achiever\Controller\ACController $controller */
+		/** @var \BookBeacon\BookBeacon\Controller\BBController $controller */
         $controller = $this->getController();
 
 		$controller->setContainer($this->container)
@@ -91,7 +91,7 @@ class Application extends AbstractWebApplication
         $router = $this->container->get('router');
 
         // Set default controller
-        $router->setDefaultController('Achiever\\Controller\\IndexController');
+        $router->setDefaultController('BookBeacon\\Controller\\IndexController');
 		// Tim: 路徑全寫在 routing.json 比較清楚
         //$router->setControllerPrefix('Achiever\\Controller\\');
 

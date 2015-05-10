@@ -6,27 +6,25 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Provider;
+namespace BookBeacon\Provider;
 
 
-use Achiever\Jogging\Jogging;
+use Joomla\Application\AbstractWebApplication;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
-use Joomla\Registry\Registry;
 
-class JoggingProvider implements ServiceProviderInterface
+class ApplicationProvider implements ServiceProviderInterface
 {
     /**
-     * Property config.
+     * Property app.
      *
-     * @var \Joomla\Registry\Registry
+     * @var
      */
-    public $config;
+    public $app;
 
-
-    public function __construct(Registry $config)
+    public function __construct(AbstractWebApplication $app)
     {
-        $this->config = $config;
+        $this->app = $app;
     }
 
     /**
@@ -40,15 +38,10 @@ class JoggingProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $this->config->set('where', 'Taiwan');
+        $container->share('app', $this->app);
 
-        $container->share(
-            'achiever.jogging',
-            function ($container)
-            {
-                return new Jogging($container->get('config'));
-            }
-        );
+        // todo:
+        //$container->share('input', $this->app->input);
     }
 }
  

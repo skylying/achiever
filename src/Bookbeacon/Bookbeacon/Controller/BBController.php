@@ -1,12 +1,12 @@
 <?php
 /**
- * Part of achiever project. 
+ * Part of BookBeacon project.
  *
- * @copyright  Copyright (C) 2011 - 2015 Achiever, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2011 - 2015 BookBeacon, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Achiever\Controller;
+namespace Bookbeacon\Bookbeacon\Controller;
 
 
 use Joomla\Application\AbstractWebApplication;
@@ -15,7 +15,7 @@ use Joomla\DI\Container;
 use Joomla\DI\ContainerAwareInterface;
 use Joomla\Input\Input;
 
-abstract class ACController extends AbstractController implements ContainerAwareInterface
+abstract class BBController extends AbstractController implements ContainerAwareInterface
 {
 	/**
 	 * Property container.

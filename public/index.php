@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of achiever project.
+ * Part of BookBeacon project.
  *
  * @copyright  Copyright (C) 2011 - 2014 Achiever, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
@@ -19,4 +19,4 @@ define('JPATH_ROOT', AC_TEMPLATE_ROOT_PATH);
 
 
 
-(new Achiever\Application\Application)->execute();
+(new BookBeacon\Application\Application)->execute();

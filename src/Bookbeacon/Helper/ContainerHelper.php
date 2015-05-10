@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
-namespace Achiever\Helper;
+namespace BookBeacon\Helper;
 
 
 use Joomla\DI\Container;

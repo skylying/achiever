@@ -15,6 +15,7 @@
 	<title>Index Template</title>
 
 	<link rel="stylesheet" href="media/library/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="media/css/style.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -25,8 +26,24 @@
 
 <body>
 
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				Brand
+			</a>
+		</div>
+	</div>
+</nav>
+
 <div class="container">
-	<h1>Hello world</h1>
+	<section id="content">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10">
+				<h1>Content here</h1>
+			</div>
+		</div>
+	</section>
 </div>
 
 
