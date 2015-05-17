@@ -1,0 +1,42 @@
+{
+  "name": "bookbeacon",
+  "version": "1.0.0",
+  "description": "Where you can find next book",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skylying/bookbeacon.git"
+  },
+  "keywords": [
+    "bookbeacon"
+  ],
+  "author": "Tim Lin, Kai Kao",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/skylying/bookbeacon/issues"
+  },
+  "homepage": "https://github.com/skylying/bookbeacon",
+  "dependencies": {
+    "react": "~0.13.2",
+    "gulp": "~3.8.11"
+  },
+  "devDependencies": {
+    "gulp-browserify": "~0.5.1",
+    "gulp-concat": "~2.5.2",
+    "reactify": "~1.1.0",
+    "browserify": "~9.0.8",
+    "gulp-notify": "~2.2.0",
+    "gulp-uglify": "~1.2.0",
+    "gulp-html-replace": "~1.4.5",
+    "gulp-react": "~3.0.1",
+    "vinyl-source-stream": "~1.1.0",
+    "watchify": "~3.1.2",
+    "gulp-streamify": "0.0.5",
+    "gulp-connect": "~2.2.0",
+    "gulp-less": "~3.0.3",
+    "gulp-livereload": "~3.8.0"
+  }
+}

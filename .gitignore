@@ -9,3 +9,6 @@
 #project
 .htaccess
 /etc/config.json
+
+#Front-end package
+node_modules/

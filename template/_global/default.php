@@ -15,7 +15,10 @@
 	<title>Index Template</title>
 
 	<link rel="stylesheet" href="media/library/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="media/css/style.css" />
+	<link rel="stylesheet" href="media/dist/css/style.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="media/library/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -37,18 +40,11 @@
 </nav>
 
 <div class="container">
-	<section id="content">
-		<div class="row">
-			<div class="col-md-offset-1 col-md-10">
-				<h1>Content here</h1>
-			</div>
-		</div>
+	<section>
+		<div id="content"></div>
 	</section>
 </div>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="media/library/bootstrap/js/bootstrap.min.js"></script>
+<script src="media/dist/js/build.js"></script>
 </body>
 </html>
