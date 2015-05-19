@@ -12,7 +12,7 @@
 	<meta name="author" content="">
 	<link rel="icon" href="../../favicon.ico">
 
-	<title>Index Template</title>
+	<title>Book Beacon</title>
 
 	<link rel="stylesheet" href="media/library/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="media/dist/css/style.css" />
@@ -33,14 +33,24 @@
 	<div class="container">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">
-				Brand
+				Book Beacon
 			</a>
 		</div>
 	</div>
 </nav>
 
 <div class="container">
-	<section>
+	<div id="banner">
+		<div class="banner-slogan-wrap text-center">
+			<h1 class="quote">與您的下一本書相遇</h1>
+			<p>發掘好書，分享好書，討論好書</p>
+		</div>
+		<div class="signup-wrap text-center">
+			<button id="facebook-login" type="button">Facebook 登入</button>
+		</div>
+	</div>
+
+	<section id="main-body">
 		<div id="content"></div>
 	</section>
 </div>
