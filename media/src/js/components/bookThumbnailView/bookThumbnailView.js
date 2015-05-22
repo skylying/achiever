@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
 var Book = require('./book');
+var SearchBar = require('./searchBar');
 
 var BookThumbnailView = React.createClass({
 	getInitialState: function() {
@@ -25,7 +26,7 @@ var BookThumbnailView = React.createClass({
 						{bookList}
 					</div>
 					<div className="col-md-3">
-						<h1>Right column</h1>
+						<SearchBar />
 					</div>
 				</div>
 			</div>

@@ -2,9 +2,12 @@
 var React = require('react');
 var BookThumbnailView = require('./components/bookThumbnailView/bookThumbnailView');
 
-
+/**
+ * Single book data format
+ */
 var singleBook = {
-	'path': 'media/image/books/from0to1.jpg'
+	'path': 'media/image/books/from0to1.jpg',
+	'link': 'http://www.google.com.tw'
 };
 
 var fakeData = generateFakeBooks(20);

@@ -1,8 +1,8 @@
 {
-	"_comment": "Default controller is Achiever\\Controller\\IndexController",
+	"===comment===": "Default controller is Bookbeacon\\Controller\\IndexController",
 
-	"exercise": "Achiever\\Controller\\Exercise\\DisplayController",
-	"exercise/:id/:alias": "Achiever\\Controller\\Exercise\\DisplayController",
+	"book": "Bookbeacon\\Controller\\Book\\DisplayController",
+	"book/:id": "Bookbeacon\\Controller\\Book\\DisplayController",
 
 	"reading": "Reading\\",
 	"reading/:id/:alias": "Reading\\"
