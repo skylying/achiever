@@ -1,11 +1,15 @@
 {
-	"name": "achiever",
-	"description": "Goal management web application",
+	"name": "BookBeacon",
+	"description": "Where you find your next book",
+    "minimum-stability" : "stable",
 	"author": {
 		"name": "Tim Lin"
 	},
 	"require": {
 		"joomla/application": "1.*",
+        "joomla/session": "~1.1",
+        "joomla/string": "~1.1",
+        "joomla/uri": "~1.1",
 		"joomla/di": "1.*",
 		"joomla/controller": "1.*",
 		"joomla/model": "1.*",
@@ -15,7 +19,9 @@
 		"robmorgan/phinx": "*",
 		"windwalker/datamapper": "dev-master",
 		"windwalker/database": "2.*",
-		"windwalker/compare": "2.*"
+		"windwalker/compare": "2.*",
+
+        "twig/twig": "~1.0"
 	},
 
 	"autoload": {

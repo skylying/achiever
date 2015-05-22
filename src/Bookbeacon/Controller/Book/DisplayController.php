@@ -27,6 +27,9 @@ class DisplayController extends BBController
 	 */
 	public function execute()
 	{
+		// Use this to get input value in url
+		//show($this->getInput()->get('id'));
+
 		echo '<h1>This is single book page</h1>';
 	}
 }
