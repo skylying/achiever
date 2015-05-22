@@ -49,7 +49,7 @@ class RouterProvider implements ServiceProviderInterface
             //$router->setMethodInPostRequest(true);
 
             $map = new Registry;
-            $map->loadFile(AC_ETC_PATH . '/routing.json');
+            $map->loadFile(BB_ETC_PATH . '/routing.json');
 
             $router->addMaps($map->toArray());
 

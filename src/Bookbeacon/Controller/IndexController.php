@@ -37,7 +37,7 @@ class IndexController extends BBController
 		$paths = new \SplPriorityQueue;
 
 		// Insert template roots and load priority (with number)
-		$paths->insert(AC_TEMPLATE_ROOT_PATH . '/_global', 128);
+		$paths->insert(BB_TEMPLATE_ROOT_PATH . '/_global', 128);
 
 		$view = new IndexHtmlView($testData, $paths);
 

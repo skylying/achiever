@@ -43,7 +43,7 @@ class ConfigProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $configFile = AC_ROOT_PATH . '/config/config.yml';
+        $configFile = BB_ROOT_PATH . '/config/config.yml';
 
         if (!is_file($configFile))
         {
