@@ -1,0 +1,25 @@
+{% extends "_default.twig" %}
+
+{% block content %}
+
+    <div id="banner">
+        <div class="banner-slogan-wrap text-center">
+            <h1 class="quote">與您的下一本書相遇</h1>
+            <p>發掘好書，分享好書，討論好書</p>
+        </div>
+        <div class="signup-wrap text-center">
+            <button id="facebook-login" type="button">Facebook 登入</button>
+        </div>
+    </div>
+
+    <section id="main-body">
+        <div id="content"></div>
+    </section>
+
+{% endblock %}
+
+{% block reactscript %}
+
+<script src="{{ baseUri }}media/dist/js/build.js"></script>
+
+{% endblock %}

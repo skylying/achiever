@@ -10,6 +10,8 @@ namespace BookBeacon\Controller\Book;
 
 
 use Bookbeacon\Bookbeacon\Controller\BBController;
+use BookBeacon\View\Book\BookHtmlView;
+use Windwalker\Data\Data;
 
 class DisplayController extends BBController
 {
@@ -29,7 +31,10 @@ class DisplayController extends BBController
 	{
 		// Use this to get input value in url
 		//show($this->getInput()->get('id'));
+		$data = new Data(array('name' => 'Jack'));
 
-		echo '<h1>This is single book page</h1>';
+		$view = new BookHtmlView($data);
+
+		echo $view->setLayout('book/book.twig')->render();
 	}
 }

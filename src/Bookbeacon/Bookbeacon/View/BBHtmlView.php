@@ -14,7 +14,7 @@ use Joomla\View\AbstractHtmlView;
 use Windwalker\Data\Data;
 
 /**
- * Class ACHtmlView
+ * Class BBHtmlView
  *
  * @since 1.0
  */
@@ -28,16 +28,44 @@ class BBHtmlView extends AbstractHtmlView
 	protected $data;
 
 	/**
-	 * Constructor
+	 * Property renderer.
 	 *
-	 * @param Data              $data
-	 * @param \SplPriorityQueue $paths
+	 * @var  \Twig_Environment
 	 */
-	public function __construct(Data $data, \SplPriorityQueue $paths = null)
+	public $renderer;
+
+	/**
+	 * @param Data $data
+	 */
+	public function __construct(Data $data)
 	{
 		$this->data = ($data instanceof Data) ? $data : new Data($data);
 
-		$this->paths = isset($paths) ? $paths : $this->loadPaths();
+		$loader = new \Twig_Loader_Filesystem(BB_TEMPLATE_ROOT_PATH);
+		$this->renderer = new \Twig_Environment($loader);
+
+		$this->addGlobals();
+	}
+
+	/**
+	 * render
+	 *
+	 * @return  string|void
+	 */
+	public function render()
+	{
+		return $this->renderer->render($this->getLayout(), iterator_to_array($this->data));
+	}
+
+	/**
+	 * Method to bind global variables to twig template
+	 *
+	 * @return  void
+	 */
+	public function addGlobals()
+	{
+		// TODO: 暫時寫死, 日後要有更完善的 Uri 處理機制
+		$this->renderer->addGlobal('baseUri', "/bookbeacon/");
 	}
 
 	/**

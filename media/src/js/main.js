@@ -7,7 +7,7 @@ var BookThumbnailView = require('./components/bookThumbnailView/bookThumbnailVie
  */
 var singleBook = {
 	'path': 'media/image/books/from0to1.jpg',
-	'link': 'http://www.google.com.tw'
+	'link': window.location.href + 'book'
 };
 
 var fakeData = generateFakeBooks(20);

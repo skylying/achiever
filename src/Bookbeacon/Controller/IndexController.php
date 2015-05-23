@@ -32,17 +32,17 @@ class IndexController extends BBController
 		/** @var \BookBeacon\BookBeacon\Model\BBModel $model */
 		//$model = new ACModel($this->container->get('db'));
 
-		$testData = new Data(['name' => 'jack']);
+		$testData = new Data(['age' => 18]);
 
-		$paths = new \SplPriorityQueue;
+		//$paths = new \SplPriorityQueue;
 
 		// Insert template roots and load priority (with number)
-		$paths->insert(BB_TEMPLATE_ROOT_PATH . '/_global', 128);
+		//$paths->insert(BB_TEMPLATE_ROOT_PATH . '/_global', 128);
 
-		$view = new IndexHtmlView($testData, $paths);
+		$view = new IndexHtmlView($testData);
 
 		// This is important, don't forget to echo the rendered output
-		echo $view->setLayout('default')->render();
+		echo $view->setLayout('index/index.twig')->render();
 	}
 }
  
