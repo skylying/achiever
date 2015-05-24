@@ -1,31 +1,46 @@
 /** @jsx React.DOM */
 var React = require('react');
 var BookThumbnailView = require('./components/bookThumbnailView/bookThumbnailView');
+var Router = require('./router/router');
 
-/**
- * Single book data format
- */
-var singleBook = {
-	'path': 'media/image/books/from0to1.jpg',
-	'link': window.location.href + 'book'
-};
+(function() {
 
-var fakeData = generateFakeBooks(20);
-
-/**
- * Debug function, used to generate fake book thumbnail data
- *
- * @param number
- */
-function generateFakeBooks(number)
-{
-	var result = [];
-	for (var i = 1; i <= number; i++) {
-		result.push(singleBook);
+	if (window.ReactLoader !== undefined) {
+		return false;
 	}
-	return result;
-}
+
+	/**
+	 * Load react App based on different page
+	 *
+	 * @type {{init: Function}}
+	 */
+	window.ReactLoader = {
+		init: function(data, appendTarget) {
+
+			/**
+			 * Single book data format
+			 */
+			var singleBook = {
+				'path': 'media/image/books/from0to1.jpg',
+				'link': window.location.href + 'book'
+			};
+
+			/**
+			 * Debug function, used to generate fake book thumbnail data
+			 *
+			 * @param number
+			 */
+			function generateFakeBooks(number)
+			{
+				var result = [];
+				for (var i = 1; i <= number; i++) {
+					result.push(singleBook);
+				}
+				return result;
+			}
 
 
-
-React.render(<BookThumbnailView data={fakeData} />, document.getElementById('content'));
+			React.render(<Router data={generateFakeBooks(20)} />, appendTarget);
+		}
+	}
+})();

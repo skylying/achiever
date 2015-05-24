@@ -20,6 +20,11 @@
 
 {% block reactscript %}
 
-<script src="{{ baseUri }}media/dist/js/build.js"></script>
+    <script>
+        $(document).ready(function() {
+            // No data now, should remove NULL later
+            ReactLoader.init(null, document.getElementById('content'));
+        })
+    </script>
 
 {% endblock %}

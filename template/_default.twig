@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="{{ baseUri }}media/library/bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="{{ baseUri }}media/dist/css/style.css" />
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{{ baseUri }}media/library/jquery/jquery-1.11.3.min.js"></script>
 	<script src="{{ baseUri }}media/library/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,9 +46,16 @@
 {# 填補 navbar 用的 #}
 <div style="width: 100%; height: 50px;"></div>
 
+{# Container #}
 <div class="container">
     {% block content %}{% endblock %}
 </div>
+
+{# Universal React build file #}
+<script src="{{ baseUri }}media/dist/js/build.js"></script>
+
+{# React routing script #}
 {% block reactscript %}{% endblock %}
+
 </body>
 </html>

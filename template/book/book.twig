@@ -2,13 +2,20 @@
 
 {% block content %}
 
-   <h1>book content here</h1>
+   <div id="content-book">
+
+   </div>
 
 {% endblock %}
 
 {% block reactscript %}
 
-
+    <script>
+        $(document).ready(function() {
+            // No data now, should remove NULL later
+            ReactLoader.init(null, document.getElementById('content-book'));
+        })
+    </script>
 
 {% endblock %}
 
