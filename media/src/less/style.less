@@ -5,6 +5,10 @@ body {
 	background: @backgroundColor;
 }
 
+.body-inner {
+	background: #ffffff;
+}
+
 #banner {
 	width: 100%;
 	height: @banner-height;
@@ -49,5 +53,27 @@ body {
 		.column-padding {
 			padding-bottom: 20px;
 		}
+	}
+}
+
+#singlebook-content {
+	#book-cover img {
+		width: 200px;
+		height: 300px;
+	}
+}
+
+.book-history-placeholder-div {
+	width: 100%;
+	height: 50px;
+	border: 2px dashed black;
+	span {
+		font-size: 2em;
+		margin-left: 50%;
+		padding-top: 10px;
+	}
+	&:hover {
+		cursor: pointer;
+		background: #ddd;
 	}
 }

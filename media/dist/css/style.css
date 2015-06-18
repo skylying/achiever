@@ -2,6 +2,9 @@ body {
   font-size: 14px;
   background: #adf3e0;
 }
+.body-inner {
+  background: #ffffff;
+}
 #banner {
   width: 100%;
   height: 400px;
@@ -43,4 +46,22 @@ body {
 }
 #content #thumbnail-view .column-padding {
   padding-bottom: 20px;
+}
+#singlebook-content #book-cover img {
+  width: 200px;
+  height: 300px;
+}
+.book-history-placeholder-div {
+  width: 100%;
+  height: 50px;
+  border: 2px dashed black;
+}
+.book-history-placeholder-div span {
+  font-size: 2em;
+  margin-left: 50%;
+  padding-top: 10px;
+}
+.book-history-placeholder-div:hover {
+  cursor: pointer;
+  background: #ddd;
 }
