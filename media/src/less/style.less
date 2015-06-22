@@ -57,9 +57,16 @@ body {
 }
 
 #singlebook-content {
-	#book-cover img {
-		width: 200px;
-		height: 300px;
+	margin-top: 30px;
+	.singlebook-container {
+		padding: 0 10px;
+	}
+	#book-cover {
+		img {
+			width: 200px;
+			height: 300px;
+			border: 2px solid black;
+		}
 	}
 }
 
@@ -77,3 +84,57 @@ body {
 		background: #ddd;
 	}
 }
+
+
+//================================
+// Review Component style
+
+.username {
+	padding: 7px 0 0 10px;
+	font-size: 1.2em;
+}
+.review-content {
+	margin-left: 50px;
+}
+
+.like-count-wrap {
+	span {
+		font-size: 1.2em;
+	}
+	#like-count {
+		padding-left: 7px;
+	}
+}
+
+//================================
+// Question Component style
+
+.vote {
+	width: 10%;
+	.vote-wrap {
+		span {
+			display: inline-block;
+			width: 100%;
+			font-size: 1.5em;
+			margin-bottom: 10px;
+		}
+		span:first-child {
+			margin-bottom: 20px;
+		}
+		span:nth-child(odd) {
+			cursor: pointer;
+		}
+	}
+}
+
+.answer {
+	width: 85%;
+}
+
+
+
+
+
+
+
+

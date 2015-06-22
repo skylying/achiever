@@ -1,16 +1,31 @@
 /** @jsx React.DOM */
 var React = require('react');
-var BookProfile = require('./bookProfile');
-var BookHistory = require('./bookHistory');
-var BookDigest = require('./bookDigest');
+var Profile = require('./profile');
+var History = require('./history');
+var Digest = require('./digest');
+var Review = require('./review');
+var Question = require('./question');
 
 var SingleBookView = React.createClass({
     render: function() {
 	    return (
-		    <div>
-			    <BookProfile />
-			    <BookHistory />
-			    <BookDigest />
+		    <div className="singlebook-container">
+			    <Profile />
+			    <hr/>
+			    <History />
+			    <hr/>
+			    <Digest />
+			    <hr/>
+			    <Review />
+			    <hr/>
+			    <Question />
+
+
+			    <br/>
+			    <br/>
+			    <br/>
+			    <br/>
+			    <br/>
 		    </div>
 	    )
     }

@@ -1,4 +1,6 @@
+/** @jsx React.DOM */
 var React = require('react');
+var AddNewComment = require('./modules/addNewComment');
 
 var BookDigest = React.createClass({
     render: function() {
@@ -32,6 +34,7 @@ var BookDigest = React.createClass({
 				    <br />
 				    匡復想要逃離空虛的感受，卻不但驅離不了空虛，心裡還不知不覺想起她，或許是因為和她分手的時間還不夠長吧！而他自己也很矛盾，要把她忘記，或是期盼與她再次相聚？
 			    </p>
+			    <AddNewComment />
 		    </div>
 	    )
     }
