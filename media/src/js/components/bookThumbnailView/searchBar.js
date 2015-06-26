@@ -5,7 +5,9 @@ var SearchBar = React.createClass({
 		return (
 			<div className="row">
 				<div className="col-md-12 col-sm-12 col-xs-12">
-					<button className="btn btn-default" style={{width: '100%'}}>Add books</button>
+					<a href={this.props.addNewBookLink}>
+						<button className="btn btn-default" style={{width: '100%'}}>Add books</button>
+					</a>
 				</div>
 			</div>
 		)

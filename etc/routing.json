@@ -4,6 +4,8 @@
 	"book": "Bookbeacon\\Controller\\Book\\DisplayController",
 	"book/:id": "Bookbeacon\\Controller\\Book\\DisplayController",
 
+    "new": "Bookbeacon\\Controller\\AddNewBook\\DisplayController",
+
 	"reading": "Reading\\",
 	"reading/:id/:alias": "Reading\\"
 }

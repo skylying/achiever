@@ -2,6 +2,7 @@
 var React = require('react');
 var SingleBookView = require('../components/singleBookView/singleBookView');
 var BookThumbnailView = require('../components/bookThumbnailView/bookThumbnailView');
+var AddNewBookView = require('../components/addNewBookView/addNewBookView');
 
 var Router = React.createClass({
 	getInitialState: function() {
@@ -17,6 +18,9 @@ var Router = React.createClass({
 		switch(route) {
 			case 'book':
 				this.setState({component: <SingleBookView data={this.props.data} />});
+				break;
+			case 'new':
+				this.setState({component: <AddNewBookView data={this.props.data} />});
 				break;
 			default:
 				this.setState({component: <BookThumbnailView data={this.props.data} />});

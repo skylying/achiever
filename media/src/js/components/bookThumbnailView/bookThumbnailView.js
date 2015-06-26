@@ -9,7 +9,7 @@ var BookThumbnailView = React.createClass({
 	},
 	render: function() {
 
-		var books = this.state.data,
+		var books = this.state.data.books,
 			bookList = [];
 
 		books.forEach(function(book, index) {
@@ -26,7 +26,7 @@ var BookThumbnailView = React.createClass({
 						{bookList}
 					</div>
 					<div className="col-md-3">
-						<SearchBar />
+						<SearchBar addNewBookLink={this.props.data.addNewBookLink} />
 					</div>
 				</div>
 			</div>

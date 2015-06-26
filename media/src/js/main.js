@@ -21,7 +21,7 @@ var Router = require('./router/router');
 			 * Single book data format
 			 */
 			var singleBook = {
-				'path': 'media/image/books/from0to1.jpg',
+				'path': 'media/image/books/werther.jpg',
 				'link': window.location.href + 'book'
 			};
 
@@ -39,8 +39,14 @@ var Router = require('./router/router');
 				return result;
 			}
 
+			// We should pass data from php to this variable in the future
+			var data = {
+				"books": generateFakeBooks(20),
+				"addNewBookLink": window.location.href + 'new'
+			};
 
-			React.render(<Router data={generateFakeBooks(20)} />, appendTarget);
+
+			React.render(<Router data={data} />, appendTarget);
 		}
 	}
 })();
