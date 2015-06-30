@@ -1,10 +1,10 @@
 {
 	"===comment===": "Default controller is Bookbeacon\\Controller\\IndexController",
 
-	"book": "Bookbeacon\\Controller\\Book\\DisplayController",
-	"book/:id": "Bookbeacon\\Controller\\Book\\DisplayController",
+	"book": "BookBeacon\\Controller\\Book\\DisplayController",
+	"book/:id": "BookBeacon\\Controller\\Book\\DisplayController",
 
-    "new": "Bookbeacon\\Controller\\AddNewBook\\DisplayController",
+    "new": "BookBeacon\\Controller\\AddNewBook\\DisplayController",
 
 	"reading": "Reading\\",
 	"reading/:id/:alias": "Reading\\"

@@ -1,8 +1,8 @@
 <?php
 /**
- * Part of Bookbeacon project. 
+ * Part of BookBeacon project. 
  *
- * @copyright  Copyright (C) 2011 - 2015 Bookbeacon, Inc. All rights reserved.
+ * @copyright  Copyright (C) 2011 - 2015 BookBeacon, Inc. All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
