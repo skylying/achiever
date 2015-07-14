@@ -1,13 +1,8 @@
 @import '_variables';
+@import '_global';
+@import '_bootstrap_override';
 
-body {
-	font-size: @default-font-size;
-	background: @backgroundColor;
-}
-
-.body-inner {
-	background: #ffffff;
-}
+@import '_utilities';
 
 #banner {
 	width: 100%;
@@ -56,17 +51,11 @@ body {
 	}
 }
 
-#singlebook-content {
-	margin-top: 30px;
-	.singlebook-container {
-		padding: 0 10px;
-	}
-	#book-cover {
-		img {
-			width: 200px;
-			height: 300px;
-			border: 2px solid black;
-		}
+#book-cover {
+	img {
+		width: 200px;
+		height: 300px;
+		border: 2px solid black;
 	}
 }
 
@@ -132,9 +121,35 @@ body {
 }
 
 
+//================================
+// ProfileEdit component style
+.placeholder-book {
+	width: 200px;
+	height: 300px;
+	border: 2px dashed #ddd;
+	margin: 0 auto;
+	border-radius: 10px;
+}
 
+.placeholder-book:hover {
+	cursor: pointer;
+	background: darken(#ffffff, 10%);
+}
 
+.placeholder-book .glyphicon {
+	font-size: 3em;
+	margin-top: 129px;
+}
 
+.badge-group-wrap {
+	width: 50px;
+	font-size: 1.3em;
+}
 
+.badge-item-icon {
+	display: block;
+}
 
+.badge-item-text {
 
+}

@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var AddNewComment = require('./modules/addNewComment');
+var AddNewComment = require('./widgets/addNewComment');
 
 var Review = React.createClass({
     render: function() {

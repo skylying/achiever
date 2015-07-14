@@ -1,9 +1,25 @@
+/* All global styles like h1, h2, body should be put here */
 body {
   font-size: 14px;
   background: #adf3e0;
 }
 .body-inner {
   background: #ffffff;
+}
+.container-twig-outer {
+  padding: 30px 10px 0 10px;
+}
+/* This is for override any built in bootstrap style */
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+/* Utilities styles like btn, img-rect ... should be put here */
+.btn-edit-block {
+  width: 100%;
+  padding: 15px;
+  font-size: 2em;
 }
 #banner {
   width: 100%;
@@ -47,13 +63,7 @@ body {
 #content #thumbnail-view .column-padding {
   padding-bottom: 20px;
 }
-#singlebook-content {
-  margin-top: 30px;
-}
-#singlebook-content .singlebook-container {
-  padding: 0 10px;
-}
-#singlebook-content #book-cover img {
+#book-cover img {
   width: 200px;
   height: 300px;
   border: 2px solid black;
@@ -97,6 +107,31 @@ body {
 .vote .vote-wrap span:first-child {
   margin-bottom: 20px;
 }
+.vote .vote-wrap span:nth-child(odd) {
+  cursor: pointer;
+}
 .answer {
   width: 85%;
+}
+.placeholder-book {
+  width: 200px;
+  height: 300px;
+  border: 2px dashed #ddd;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.placeholder-book:hover {
+  cursor: pointer;
+  background: #e6e6e6;
+}
+.placeholder-book .glyphicon {
+  font-size: 3em;
+  margin-top: 129px;
+}
+.badge-group-wrap {
+  width: 50px;
+  font-size: 1.3em;
+}
+.badge-item-icon {
+  display: block;
 }

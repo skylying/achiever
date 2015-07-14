@@ -1,14 +1,18 @@
 /** @jsx React.DOM */
 var React = require('react');
+var ProfileEdit = require('./profileEdit');
+var SectionEdit = require('./sectionEdit');
 
-var AddMewBpplVoew = React.createClass({
+var AddNewBookView = React.createClass({
     render: function() {
 	    return (
 		    <div>
-			    <h1>Add new book view</h1>
+			    <ProfileEdit />
+			    <hr/>
+			    <SectionEdit />
 		    </div>
 	    )
     }
 });
 
-module.exports = AddMewBpplVoew;
+module.exports = AddNewBookView;

@@ -1,5 +1,5 @@
 var React = require('react');
-var AddNewComment = require('./modules/addNewComment');
+var AddNewComment = require('./widgets/addNewComment');
 
 var BookProfile = React.createClass({
 	render: function() {

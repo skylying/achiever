@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
-var MoreAnswer = require('./modules/moreAnswer');
-var AddNewComment = require('./modules/addNewComment');
+var MoreAnswer = require('./widgets/moreAnswer');
+var AddNewComment = require('./widgets/addNewComment');
 var $ = require('jquery');
 
 var Question = React.createClass({
